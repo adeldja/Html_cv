@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes projets</title>
+    <link rel="stylesheet" href="style_Adel.css" />
+    <script>
+      window.onload = function () {
+        // définir le lien actif du menu
+        currentLinks = document.querySelectorAll('a[href="' + document.URL.split("/").at(-1) /* => page courante */ + '"]');
+        currentLinks.forEach(function (link) {
+          link.classList.add("active");
+        });
+
+        // gérer le menu responsive
+        var boutonMenu = document.querySelector("#boutonMenu");
+        var menuList = document.querySelector("#menuList");
+        boutonMenu.addEventListener("click", function () {
+          menuList.classList.toggle("menuListResponsive_opened");
+          boutonMenu.classList.toggle("boutonMenurResponsive_opened");
+        });
+        
+      };
+    </script>
+  </head>
+  <body>
+    <nav id="menu">
+      <button id="boutonMenu" class="openMenu"><img id="imgMenu" src="img/menu.png" alt="monMenu"/></button>
+      <ul id="menuList">
+        <li>
+          <a class="menuItem" href="Projet_Adel.html">Projets</a>
+        </li>
+        <li>
+          <a class="menuItem" href="Experience_Adel.html">Expériences</a>
+        </li>
+        <li>
+          <a class="menuItem" href="Contact_Adel.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1>Projet deja réalisé</h1>
+
+    <section id="flixnet">
+      <h2>Flixnet</h2>
+      <div class="sectionContent">
+        <p>Flixnet est un service de streaming qui propose une vaste sélection de séries TV, films, animes, documentaires et autres programmes primés</p>
+      </div>
+      <img id="imgFlixnet" src="img/flixnet.png" alt="Photo bayonne" />
+    </section>
+    
+    <section id="easyfood">
+      <h2>Easyfood</h2>
+      <div class="sectionContent">
+        <p>
+          Les commandes sont prises via l'application mobile ou le site web de Easyfood auprès des restaurants partenaires
+        </p>
+      </div>
+      <img id="imgEasyfood" src="img/easyfood.jpg" alt="Photo aviron bayonnais"/>
+    </section>
+  </body>
+</html>
+
+

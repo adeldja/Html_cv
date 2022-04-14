@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Me contacter</title>
+    <link rel="stylesheet" href="style_Adel.css" />
+    <script>
+      window.onload = function () {
+        // définir le lien actif du menu
+        currentLinks = document.querySelectorAll('a[href="' + document.URL.split("/").at(-1) /* => page courante */ +'"]');
+        currentLinks.forEach(function (link) { link.classList.add("active");});
+
+        // gérer le menu responsive
+        var boutonMenu = document.querySelector("#boutonMenu");
+        var menuList = document.querySelector("#menuList");
+        boutonMenu.addEventListener("click", function () {
+          menuList.classList.toggle("menuListResponsive_opened");
+          boutonMenu.classList.toggle("boutonMenurResponsive_opened");
+        });
+        
+
+        // gestion de l'envoie du message
+        form = document.querySelector('#contactForm');
+        form.addEventListener("submit", function() {
+          alert("Tiak c'est envoyer le s! ");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <nav id="menu">
+      <button id="boutonMenu" class="openMenu"><img id="imgMenu" src="img/menu.png" alt="monMenu"/></button>
+      <ul id="menuList">
+        <li>
+          <a class="menuItem" href="Projet_Adel.html">Projets</a>
+        </li>
+        <li>
+          <a class="menuItem" href="Experience_Adel.html">Expériences</a>
+        </li>
+        <li>
+          <a class="menuItem" href="Contact_Adel.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1>Je t'écoute </h1>
+
+    <form id="contactForm" action="contact.html">
+      <label for="lname">Nom</label>
+      <input type="text" id="lname" name="lastname" placeholder="Djahnit.." required />
+      <br>
+      <label for="fname">Prénom</label>
+      <input type="text" id="fname" name="firstname" placeholder="adel.." required/>
+      <br>
+      <label for="subject" id="tiak">Dis-moi tout le zinzin ?</label>
+      <textarea id="subject" name="subject" placeholder="ouais le sang c'est la.." required></textarea>
+
+      <input class="coloredBG" type="submit" value="Envoyer" />
+    </form>
+  </body>
+</html>

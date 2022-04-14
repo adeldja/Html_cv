@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<HTML lang="fr-FR">
+  <HEAD>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes expériences</title>
+    <link rel="stylesheet" href="style_Adel.css" />
+
+    <SCRIPT>
+      window.onload = function () {
+        // définir le lien actif du menu
+        currentLinks = document.querySelectorAll('a[href="' + document.URL.split("/").at(-1) /* => page courante */ + '"]');
+        currentLinks.forEach(function (link) {
+          link.classList.add("active");
+        });
+
+        // gérer le menu responsive
+        var boutonMenu = document.querySelector("#boutonMenu");
+        var menuList = document.querySelector("#menuList");
+        boutonMenu.addEventListener("click", function () {
+          menuList.classList.toggle("menuListResponsive_opened");
+          boutonMenu.classList.toggle("boutonMenurResponsive_opened");
+        });
+      };
+    </SCRIPT>
+  </HEAD>
+
+  <BODY>
+    <nav id="menu">
+      <button id="boutonMenu" class="openMenu"><img id="imgMenu" src="img/menu.png" alt="monMenu"/></button>
+      <ul id="menuList">
+        <li>
+          <a class="menuItem" href="Projet_Adel.html">Projets</a>
+        </li>
+        <li>
+          <a class="menuItem" href="Experience_Adel.html">Expériences</a>
+        </li>
+        <li>
+          <a class="menuItem" href="Contact_Adel.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1 id="xpInfo">Mon experience informatique</h1>
+
+    <ul id="ListeExpInfo">
+      <li>
+        <a href="">
+          <img src="img/sortlist.png" alt="sortlist" />
+          <h2>Office</h2>
+          <p>
+          Création d'un logiciel de partage de donnée. 
+          </p>
+        </a>
+      </li>
+    </ul>
+
+    <h1 id="xpNInfo">Mes expériences non informatique</h1>
+
+    <ul id="ListeExpNormal">
+      <li>
+        <a href="">
+          <img src="img/avia.png" alt="avia" />
+          <h2>Avia</h2>
+          <p>
+          Vend café, sandwich et fais de la caisse
+          </p>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="img/mecaG.png" alt="mecaG" />
+          <h2>Mecanique général</h2>
+          <p>
+          Soudure, réparation, et conducteur d'engin bizzare. 
+          </p>
+        </a>
+      </li>
+    </ul>
+  </BODY>
+</HTML>
